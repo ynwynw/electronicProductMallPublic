@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>电子产品购物系统</title>
+    <link rel="stylesheet" href="../static/modules/elementui/theme/index.css">
+    <link rel="stylesheet" href="../static/css/app.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/modules/animate.min.css">
+    <script src="../static/modules/wow.min.js"></script>
+    <script src="../static/modules/vue.min.js"></script>
+    <script src="../static/modules/elementui/index.js"></script>
+    <script src="../static/iconfont/iconfont.js"></script>
+</head>
+<body>
+<el-container id="page" v-cloak>
+    <el-header height="auto">
+        <page-header></page-header>
+    </el-header>
+    <el-container>
+    <page-aside>
+        <template v-slot:menu>
+            <page-menus></page-menus>
+        </template>
+    </page-aside>
+        <el-main>
+            <div id="child-page">
+            </div>
+        </el-main>
+    </el-container>
+</el-container>
+</body>
+<script src="../static/modules/axios.min.js"></script>
+<script src="../utils/http.js"></script>
+<script src="../utils/toolUtil.js"></script>
+<script src="../utils/global_mixin.js"></script>
+<!--引入组件-->
+<script src="../components/pageHeader.js"></script>
+<script src="../components/pageMenus.js"></script>
+<script src="../components/pageAside.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#page',
+        data(){
+            return {
+            }
+        },
+        mounted(){
+        },
+        methods: {
+            getCountList(){
+            },
+            //权限验证
+            btnAuth(e,a){
+                return toolUtil.isAuth(e,a)
+            },
+            getChartList(){
+            },
+        }
+    })
+</script>
+</html>
